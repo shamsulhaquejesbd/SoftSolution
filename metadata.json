@@ -1,0 +1,6 @@
+{
+  "name": "SoftSolution - Japan & Bangladesh Software Solutions",
+  "description": "Exact replica of SoftSolution website connecting Japan and Bangladesh software engineering with a complete admin panel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - SoftSolution Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/admin.css" />
+</head>
+<body class="admin-body">
+
+  <!-- ==========================================================================
+       Sidebar
+       ========================================================================== -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <svg viewBox="0 0 40 40" width="30" height="30" fill="none">
+        <path d="M20 5C12 5 6 11 6 18C6 23 10 26 16 28L22 30C26 31 29 32 29 35C29 38 25 40 20 40" stroke="#0066cc" stroke-width="5" stroke-linecap="round" />
+        <path d="M17 5C23 5 29 10 29 17C29 21 26 24 21 26L13 28C8 30 5 32 5 36" stroke="#dc2626" stroke-width="5" stroke-linecap="round" />
+      </svg>
+      <div>
+        <div class="sidebar-brand-name">SoftSolution</div>
+        <div class="sidebar-badge">Admin Panel</div>
+      </div>
+    </div>
+
+    <ul class="sidebar-menu">
+      <li class="menu-category-title">Main</li>
+      <li class="sidebar-item active" data-tab="tab-dashboard">
+        <a href="#dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Dashboard &amp; Inquiries</span>
+        </a>
+      </li>
+
+      <li class="menu-category-title">Website Content</li>
+      <li class="sidebar-item" data-tab="tab-hero">
+        <a href="#hero">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          <span>Hero Banner</span>
+        </a>
+      </li>
+      <li class="sidebar-item" data-tab="tab-partnership">
+        <a href="#partnership">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          <span>Partnership Flow</span>
+        </a>
+      </li>
+      <li class="sidebar-item" data-tab="tab-services">
+        <a href="#services">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          <span>Services (What We Do)</span>
+        </a>
+      </li>
+      <li class="sidebar-item" data-tab="tab-portfolio">
+        <a href="#portfolio">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          <span>Portfolio (Our Work)</span>
+        </a>
+      </li>
+      <li class="sidebar-item" data-tab="tab-why-process">
+        <a href="#why-process">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+          <span>Why Us &amp; Process</span>
+        </a>
+      </li>
+      <li class="sidebar-item" data-tab="tab-locations">
+        <a href="#locations">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>Locations (Presence)</span>
+        </a>
+      </li>
+      <li class="sidebar-item" data-tab="tab-team">
+        <a href="#team">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Meet Our Team</span>
+        </a>
+      </li>
+      <li class="sidebar-item" data-tab="tab-cta-footer">
+        <a href="#cta-footer">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>CTA Banner &amp; Footer</span>
+        </a>
+      </li>
+
+      <li class="menu-category-title">System &amp; Settings</li>
+      <li class="sidebar-item" data-tab="tab-design">
+        <a href="#design">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>Design &amp; Branding</span>
+        </a>
+      </li>
+      <li class="sidebar-item" data-tab="tab-backup">
+        <a href="#backup">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>Backup, Restore &amp; Reset</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="user-avatar-circle">AD</div>
+        <div class="user-info">
+          <div class="user-name" id="admin-user-name">Administrator</div>
+          <div class="user-role">Super Admin</div>
+        </div>
+      </div>
+      <button class="logout-btn" id="admin-logout-btn" title="Sign Out">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       Main Dashboard Area
+       ========================================================================== -->
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <h1 class="topbar-title" id="admin-tab-title">Dashboard &amp; Inquiries</h1>
+      <div class="topbar-actions">
+        <a href="/" target="_blank" class="btn-admin-outline" id="view-website-btn">
+          <span>View Website &rarr;</span>
+        </a>
+        <button type="button" class="btn-admin-outline" id="reset-defaults-top-btn" title="Restore original screenshot state">
+          Reset to Screenshot
+        </button>
+        <button type="button" class="btn-admin-primary" id="save-all-btn">
+          Publish Changes &rarr;
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-content-area">
+
+      <!-- ====================================================================
+           Tab 1: Dashboard & Inquiries
+           ==================================================================== -->
+      <section class="tab-content active" id="tab-dashboard">
+        <!-- Metrics -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">Sections Active</span>
+              <div class="metric-icon-bubble">#</div>
+            </div>
+            <div class="metric-value">8</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">Services</span>
+              <div class="metric-icon-bubble">&lt;&gt;</div>
+            </div>
+            <div class="metric-value" id="metric-services-count">6</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">Portfolio Projects</span>
+              <div class="metric-icon-bubble">&#128187;</div>
+            </div>
+            <div class="metric-value" id="metric-portfolio-count">4</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">Team Members</span>
+              <div class="metric-icon-bubble">&#128101;</div>
+            </div>
+            <div class="metric-value" id="metric-team-count">5</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">Inquiries Received</span>
+              <div class="metric-icon-bubble" style="background:#fee2e2; color:#dc2626;">&#9993;</div>
+            </div>
+            <div class="metric-value" id="metric-inquiries-count">2</div>
+          </div>
+        </div>
+
+        <!-- Inquiries / Leads Table -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Client Project Inquiries &amp; Leads</h2>
+            <button type="button" class="btn-admin-outline" id="refresh-inquiries-btn">Refresh Leads</button>
+          </div>
+          <div class="admin-card-body" style="padding:0; overflow-x:auto;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Client / Company</th>
+                  <th>Contact Info</th>
+                  <th>Project Type</th>
+                  <th>Budget</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="inquiries-table-body">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           Tab 2: Hero Section
+           ==================================================================== -->
+      <section class="tab-content" id="tab-hero">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Edit Hero Section Content</h2>
+          </div>
+          <div class="admin-card-body">
+            <form id="hero-form">
+              <div class="admin-form-group">
+                <label>Top Pre-Heading (Uppercase)</label>
+                <input type="text" id="admin-hero-preheading" class="admin-input" />
+              </div>
+
+              <div class="admin-grid-3">
+                <div class="admin-form-group">
+                  <label>Title Line 1</label>
+                  <input type="text" id="admin-hero-title1" class="admin-input" />
+                </div>
+                <div class="admin-form-group">
+                  <label>Title Line 2</label>
+                  <input type="text" id="admin-hero-title2" class="admin-input" />
+                </div>
+                <div class="admin-form-group">
+                  <label>Title Highlight Text (Blue)</label>
+                  <input type="text" id="admin-hero-highlight" class="admin-input" />
+                </div>
+              </div>
+
+              <div class="admin-form-group">
+                <label>Hero Description</label>
+                <textarea id="admin-hero-desc" class="admin-input"></textarea>
+              </div>
+
+              <div class="admin-grid-2">
+                <div class="admin-form-group">
+                  <label>Japan Badge Text (Red Dot)</label>
+                  <input type="text" id="admin-hero-badge-japan" class="admin-input" />
+                </div>
+                <div class="admin-form-group">
+                  <label>Bangladesh Badge Text (Green Dot)</label>
+                  <input type="text" id="admin-hero-badge-bd" class="admin-input" />
+                </div>
+              </div>
+
+              <div class="admin-grid-2">
+                <div class="admin-form-group">
+                  <label>Primary Button Label</label>
+                  <input type="text" id="admin-hero-cta1-text" class="admin-input" />
+                </div>
+                <div class="admin-form-group">
+                  <label>Secondary Button Label</label>
+                  <input type="text" id="admin-hero-cta2-text" class="admin-input" />
+                </div>
+              </div>
+
+              <div class="admin-grid-2">
+                <div class="admin-form-group">
+                  <label>Left Node Label (Tokyo)</label>
+                  <input type="text" id="admin-hero-node-jp" class="admin-input" />
+                </div>
+                <div class="admin-form-group">
+                  <label>Right Node Label (Dhaka)</label>
+                  <input type="text" id="admin-hero-node-bd" class="admin-input" />
+                </div>
+              </div>
+
+              <button type="submit" class="btn-admin-primary">Save Hero Changes</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           Tab 3: Partnership Flow
+           ==================================================================== -->
+      <section class="tab-content" id="tab-partnership">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Edit Partnership Section</h2>
+          </div>
+          <div class="admin-card-body">
+            <form id="partnership-form">
+              <div class="admin-grid-2">
+                <div class="admin-form-group">
+                  <label>Pre-Heading Tag</label>
+                  <input type="text" id="admin-partner-tag" class="admin-input" />
+                </div>
+                <div class="admin-form-group">
+                  <label>Main Title</label>
+                  <input type="text" id="admin-partner-title" class="admin-input" />
+                </div>
+              </div>
+              <div class="admin-form-group">
+                <label>Section Description</label>
+                <textarea id="admin-partner-desc" class="admin-input"></textarea>
+              </div>
+
+              <h3 style="font-size: 15px; margin: 24px 0 12px; color: var(--admin-text-dark);">Delivery Cards Checklists</h3>
+              <div class="admin-grid-3">
+                <div class="admin-form-group">
+                  <label>1. Japan Items (one per line)</label>
+                  <textarea id="admin-partner-japan-items" class="admin-input" style="min-height: 120px;"></textarea>
+                </div>
+                <div class="admin-form-group">
+                  <label>2. Integrated Team Items (one per line)</label>
+                  <textarea id="admin-partner-team-items" class="admin-input" style="min-height: 120px;"></textarea>
+                </div>
+                <div class="admin-form-group">
+                  <label>3. Bangladesh Items (one per line)</label>
+                  <textarea id="admin-partner-bd-items" class="admin-input" style="min-height: 120px;"></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-admin-primary">Save Partnership Flow</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           Tab 4: Services Management
+           ==================================================================== -->
+      <section class="tab-content" id="tab-services">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Manage Services (What We Do)</h2>
+            <button type="button" class="btn-admin-primary" id="add-service-btn">+ Add New Service</button>
+          </div>
+          <div class="admin-card-body" style="padding:0; overflow-x:auto;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Icon</th>
+                  <th>Service Title</th>
+                  <th>Description</th>
+                  <th>Visible</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="services-table-body">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           Tab 5: Portfolio Projects
+           ==================================================================== -->
+      <section class="tab-content" id="tab-portfolio">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Manage Featured Portfolio (Our Work)</h2>
+            <button type="button" class="btn-admin-primary" id="add-portfolio-btn">+ Add New Project</button>
+          </div>
+          <div class="admin-card-body" style="padding:0; overflow-x:auto;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Preview</th>
+                  <th>Project Name</th>
+                  <th>Tag / Category</th>
+                  <th>Tech Stack</th>
+                  <th>Visible</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="portfolio-table-body">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           Tab 6: Why Us & Process
+           ==================================================================== -->
+      <section class="tab-content" id="tab-why-process">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Edit "Why Work With Us?" Section</h2>
+          </div>
+          <div class="admin-card-body">
+            <div id="why-items-editor">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Edit "Our Process" (6 Steps)</h2>
+          </div>
+          <div class="admin-card-body">
+            <div id="process-steps-editor">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           Tab 7: Locations (Presence)
+           ==================================================================== -->
+      <section class="tab-content" id="tab-locations">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Manage Global Offices (Tokyo &amp; Dhaka)</h2>
+          </div>
+          <div class="admin-card-body">
+            <div class="admin-grid-2" id="locations-editor-container">
+              <!-- Rendered dynamically -->
+            </div>
+            <button type="button" class="btn-admin-primary" id="save-locations-btn" style="margin-top:20px;">
+              Save Locations Details
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           Tab 8: Meet Our Team
+           ==================================================================== -->
+      <section class="tab-content" id="tab-team">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Manage Team Members</h2>
+            <button type="button" class="btn-admin-primary" id="add-team-member-btn">+ Add Team Member</button>
+          </div>
+          <div class="admin-card-body" style="padding:0; overflow-x:auto;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Avatar</th>
+                  <th>Full Name</th>
+                  <th>Role / Designation</th>
+                  <th>Key Skills / Highlights</th>
+                  <th>Visible</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="team-table-body">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           Tab 9: CTA Banner & Footer
+           ==================================================================== -->
+      <section class="tab-content" id="tab-cta-footer">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Edit CTA Banner ("Let's Discuss Your Project")</h2>
+          </div>
+          <div class="admin-card-body">
+            <form id="cta-form">
+              <div class="admin-form-group">
+                <label>Banner Headline</label>
+                <input type="text" id="admin-cta-title" class="admin-input" />
+              </div>
+              <div class="admin-form-group">
+                <label>Banner Subtitle / Description</label>
+                <textarea id="admin-cta-desc" class="admin-input"></textarea>
+              </div>
+              <div class="admin-form-group">
+                <label>Button Text</label>
+                <input type="text" id="admin-cta-btn-text" class="admin-input" />
+              </div>
+              <button type="submit" class="btn-admin-primary">Save CTA Banner</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Footer Copyright &amp; Legal</h2>
+          </div>
+          <div class="admin-card-body">
+            <form id="footer-form">
+              <div class="admin-form-group">
+                <label>Copyright Statement</label>
+                <input type="text" id="admin-footer-copyright" class="admin-input" />
+              </div>
+              <div class="admin-grid-2">
+                <div class="admin-form-group">
+                  <label>Privacy Policy Link Text</label>
+                  <input type="text" id="admin-footer-privacy" class="admin-input" />
+                </div>
+                <div class="admin-form-group">
+                  <label>Terms of Service Link Text</label>
+                  <input type="text" id="admin-footer-terms" class="admin-input" />
+                </div>
+              </div>
+              <button type="submit" class="btn-admin-primary">Save Footer Settings</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           Tab 10: Design & Branding
+           ==================================================================== -->
+      <section class="tab-content" id="tab-design">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Design Customization &amp; Color Palette</h2>
+          </div>
+          <div class="admin-card-body">
+            <form id="design-form">
+              <div class="admin-grid-3">
+                <div class="admin-form-group">
+                  <label>Primary Brand Color (Red)</label>
+                  <input type="color" id="admin-color-primary" class="admin-input" style="height:44px; padding:2px;" />
+                </div>
+                <div class="admin-form-group">
+                  <label>Secondary Brand Color (Blue)</label>
+                  <input type="color" id="admin-color-secondary" class="admin-input" style="height:44px; padding:2px;" />
+                </div>
+                <div class="admin-form-group">
+                  <label>Accent Color (Cyan/Sky)</label>
+                  <input type="color" id="admin-color-accent" class="admin-input" style="height:44px; padding:2px;" />
+                </div>
+              </div>
+
+              <div class="admin-grid-2">
+                <div class="admin-form-group">
+                  <label>SEO Title Tag</label>
+                  <input type="text" id="admin-seo-title" class="admin-input" />
+                </div>
+                <div class="admin-form-group">
+                  <label>SEO Meta Description</label>
+                  <textarea id="admin-seo-desc" class="admin-input"></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-admin-primary">Apply Design Settings</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           Tab 11: Backup, Restore & Reset
+           ==================================================================== -->
+      <section class="tab-content" id="tab-backup">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Single-Click Reset to Screenshot State</h2>
+          </div>
+          <div class="admin-card-body">
+            <p style="font-size: 13.5px; color: var(--admin-text-muted); margin-bottom: 16px;">
+              Reverts all website texts, sections, colors, cards, and team members back to the exact initial screenshot provided by the user.
+            </p>
+            <button type="button" class="btn-admin-danger" id="reset-screenshot-btn">
+              Reset Everything to Original Screenshot Defaults
+            </button>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Export / Import Site Data Backup (JSON)</h2>
+          </div>
+          <div class="admin-card-body">
+            <div class="admin-grid-2">
+              <div>
+                <h3 style="font-size: 14px; margin-bottom: 8px;">Export Site Configuration</h3>
+                <p style="font-size: 13px; color: var(--admin-text-muted); margin-bottom: 12px;">Download current site settings and content as a clean JSON file.</p>
+                <button type="button" class="btn-admin-outline" id="export-json-btn">Export Site JSON &darr;</button>
+              </div>
+              <div>
+                <h3 style="font-size: 14px; margin-bottom: 8px;">Import Configuration</h3>
+                <p style="font-size: 13px; color: var(--admin-text-muted); margin-bottom: 12px;">Restore or load a previously exported JSON backup.</p>
+                <input type="file" id="import-json-file" accept=".json" style="font-size: 13px; margin-bottom: 8px;" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Toast Notification -->
+  <div class="admin-toast" id="admin-toast">Changes saved and published!</div>
+
+  <!-- Admin Script (Pure Vanilla JS ES6+) -->
+  <script type="module" src="/js/admin.js"></script>
+</body>
+</html>

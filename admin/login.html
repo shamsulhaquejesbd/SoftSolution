@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login - SoftSolution</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/admin.css" />
+</head>
+<body class="login-body">
+  <div class="login-card">
+    <div class="login-logo" id="login-logo-slot">
+      <!-- SoftSolution Logo -->
+      <svg viewBox="0 0 260 52" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: 44px; margin: 0 auto 10px;">
+        <defs>
+          <linearGradient id="redGradLogin" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ef4444" />
+            <stop offset="100%" stop-color="#b91c1c" />
+          </linearGradient>
+          <linearGradient id="blueGradLogin" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#0284c7" />
+            <stop offset="100%" stop-color="#0369a1" />
+          </linearGradient>
+        </defs>
+        <g transform="translate(4, 2)">
+          <path d="M26 6C16 6 8 13 8 22C8 28 13 32 20 34L28 36C33 37 36 39 36 43C36 47 31 50 24 50C16 50 10 45 9 39" stroke="url(#blueGradLogin)" stroke-width="7" stroke-linecap="round" />
+          <path d="M22 6C30 6 38 12 38 21C38 26 34 30 28 32L18 35C12 37 8 40 8 45" stroke="url(#redGradLogin)" stroke-width="7" stroke-linecap="round" />
+        </g>
+        <text x="56" y="27" font-family="'Inter', sans-serif" font-size="24" font-weight="800" fill="#0f172a" letter-spacing="-0.5">
+          Soft<tspan fill="#0066cc">Solution</tspan>
+        </text>
+        <text x="57" y="42" font-family="'Inter', sans-serif" font-size="9" font-weight="600" fill="#dc2626" letter-spacing="0.2">
+          Japan - Bangladesh Software Solutions
+        </text>
+      </svg>
+    </div>
+
+    <h1 class="login-title">Administrator Portal</h1>
+    <p class="login-sub">Sign in to manage website content, services, portfolio, and inquiries.</p>
+
+    <div class="demo-credentials-box">
+      <strong>Default Admin Credentials:</strong>
+      <div>Email: <code>admin@softsolution.com</code></div>
+      <div>Password: <code>admin123</code></div>
+      <button type="button" id="fill-demo-btn" style="margin-top: 8px; font-size: 11px; padding: 4px 8px; background: #166534; color: #fff; border: none; border-radius: 4px; cursor: pointer;">
+        One-Click Fill Credentials
+      </button>
+    </div>
+
+    <div id="login-error-alert" class="login-alert"></div>
+
+    <form id="admin-login-form">
+      <div class="admin-form-group">
+        <label for="login-email">Email Address</label>
+        <input type="email" id="login-email" class="admin-input" placeholder="admin@softsolution.com" required />
+      </div>
+
+      <div class="admin-form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" class="admin-input" placeholder="Enter your password" required />
+      </div>
+
+      <button type="submit" class="btn-admin-primary" style="width: 100%; justify-content: center; padding: 12px; margin-top: 8px; font-size: 14px;">
+        Sign In to Admin Panel &rarr;
+      </button>
+    </form>
+
+    <div style="text-align: center; margin-top: 24px;">
+      <a href="/" style="font-size: 13px; color: var(--admin-text-muted); text-decoration: underline;">
+        &larr; Back to Public Website
+      </a>
+    </div>
+  </div>
+
+  <script type="module">
+    import { login, isAuthenticated } from '/js/auth.js';
+
+    // If already authenticated, redirect to /admin/
+    if (isAuthenticated()) {
+      window.location.href = '/admin/';
+    }
+
+    const form = document.getElementById('admin-login-form');
+    const emailInput = document.getElementById('login-email');
+    const passwordInput = document.getElementById('login-password');
+    const errorAlert = document.getElementById('login-error-alert');
+    const fillBtn = document.getElementById('fill-demo-btn');
+
+    fillBtn.addEventListener('click', () => {
+      emailInput.value = 'admin@softsolution.com';
+      passwordInput.value = 'admin123';
+      errorAlert.style.display = 'none';
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      errorAlert.style.display = 'none';
+
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
+
+      const result = login(email, password);
+      if (result.success) {
+        window.location.href = '/admin/';
+      } else {
+        errorAlert.textContent = result.error || 'Authentication failed.';
+        errorAlert.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
